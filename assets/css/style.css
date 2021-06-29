@@ -1204,20 +1204,77 @@ section {
 
 .blob {
   position: absolute;
-  top: 0;
-  left: 0;
-  fill: rgb(122 13 253 / 25%);
-  width: 50vmax;
   z-index: -1;
-  animation: move 10s ease-in-out infinite;
   transform-origin: 50% 50%;
 }
 
-@keyframes move {
+.blob-blue {
+  animation: move_blue 20s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+  width: 11vmax;
+  top: -279%;
+  left: 4%;
+}
+
+.blob-green {
+  animation: move_green 10s ease-in-out infinite;
+  width: 50vmax;
+  top: 0;
+  left: 0;
+}
+
+.blob-purple {
+  animation: move_purple 10s ease-in-out infinite;
+  width: 20vmax;
+  bottom: -846%;
+  right: 10%;
+  transform: scaleX(-1);
+}
+
+.blob-teal {
+  animation: move_teal 10s ease-in-out infinite;
+  width: 9vmax;
+  top: -319%;
+  right: 10%;
+}
+
+@keyframes move_blue {
+  0%   { transform: scale(1) rotate(0deg); }
+  50%  { transform: scale(0.6) rotate(180deg); }
+  100%  { transform: scale(1) rotate(360deg); }
+}
+
+@keyframes move_green {
   0%   { transform: scale(1)   translate(10px, -30px); }
   38%  { transform: scale(0.8, 1) translate(80vw, 30vh) rotate(160deg); }
   40%  { transform: scale(0.8, 1) translate(80vw, 30vh) rotate(160deg); }
   78%  { transform: scale(1.3) translate(0vw, 50vh) rotate(-20deg); }
   80%  { transform: scale(1.3) translate(0vw, 50vh) rotate(-20deg); }
   100% { transform: scale(1)   translate(10px, -30px); }
+}
+
+@keyframes move_purple {
+  0%   { transform: translate(0vw, 0vh); }
+  15%  { transform: translate(0vw, -90%); }
+  80%  { transform: translate(0vw, -5%); }
+  100%  { transform: translate(0vw, 0vh); }
+}
+
+@keyframes move_teal {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+@media (max-width: 576px) { 
+  .blob {
+    height: 15rem !important;
+  }
 }
