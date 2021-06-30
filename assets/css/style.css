@@ -1202,6 +1202,20 @@ section {
 
 /*-------------------------custom-css---------------------------*/
 
+#banner-button {
+  width: fit-content;
+  background-color: #2a3555;
+  color: white;
+  font-family: "Raleway", sans-serif;
+  border-radius: 50px;
+  margin: 1rem .5rem;
+}
+
+#banner-button:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
 .blob {
   position: absolute;
   z-index: -1;
@@ -1211,7 +1225,7 @@ section {
 .blob-blue {
   animation: move_blue 20s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
   width: 11vmax;
-  top: -279%;
+  top: -179%;
   left: 4%;
 }
 
@@ -1225,7 +1239,7 @@ section {
 .blob-purple {
   animation: move_purple 10s ease-in-out infinite;
   width: 20vmax;
-  bottom: -846%;
+  bottom: -480%;
   right: 10%;
   transform: scaleX(-1);
 }
@@ -1233,8 +1247,22 @@ section {
 .blob-teal {
   animation: move_teal 10s ease-in-out infinite;
   width: 9vmax;
-  top: -319%;
+  top: -180%;
   right: 10%;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
 @keyframes move_blue {
@@ -1272,6 +1300,8 @@ section {
   90% { transform: translate(1px, 2px) rotate(0deg); }
   100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
+
+/* - media query - */
 
 @media (max-width: 576px) { 
   .blob {
